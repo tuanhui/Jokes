@@ -1,0 +1,156 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.content {
+    background-color: rgb(208,233,230);
+}
+.header.header-md {
+    min-height: 56px;
+}
+.header-md::after {
+    height: 0;
+}
+//标题栏背景
+.header-bg {
+    position:absolute;
+    left:0; 
+    top:0; 
+    height:56px; 
+    width: 100%;
+}
+
+//标题栏样式
+.toolbar-title-md {
+    color: white;
+    text-align: center;
+}
+.toolbar {
+    height: 36px;
+    width: 136px;
+    min-height: 0;
+    margin: 10px auto;
+    padding: 0;
+    background-color:transparent;
+}
+.toolbar-background {
+    background-color: transparent;
+    border-color: transparent;
+}
+.segment-md .segment-button {
+    border-bottom-style: none;  
+    border-bottom-color: transparent;  
+}
+
+.segment-md .segment-button {
+    height: auto;
+    line-height: 36px;
+    opacity: 1;
+    padding: 0;
+    border-radius: 4px;
+    color: #269e96;
+}
+
+.joke-segment .text {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color: #269e96;
+}
+.joke-segment.segment-activated .text{
+    color: white;
+}
+
+.joke-segment .bg {
+    position: absolute; 
+    left:0;
+    top:0;
+}
+.joke-segment .top-item {
+    height: 32px;
+    position:relative;
+}
+
+//tab栏选中颜色
+.tabs-ios .tab-button[aria-selected=true],
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon,
+.tabs-md .tab-button[aria-selected=true],
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #01b18f;
+} 
+
+//ios segment button 颜色
+.segment-ios .segment-button {
+    border-width: 0;
+    border-style: none;
+    border-color: transparent;
+}
+.segment-ios .segment-button.segment-activated {
+   background-color: transparent; 
+}
+
+.loading {
+    width: 68%;
+    height: 48px;
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 2px #ccc -1px -1px 2px #ccc;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+}
+.loading ion-spinner {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+ion-list {
+    margin: 0 !important;
+}
+.finished {
+    height: 36px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+    line-height: 36px;
+    color: #6f6e6e;
+}
+.finished .txt {
+    position: absolute;
+    left: 50%;
+    padding: 0 5px;
+    top: 50%;
+    background-color: rgb(208,233,230);
+    transform: translate(-50%,-50%);
+}
+
+.finished .line {
+   display: inline-block;
+   flex: 1;
+   height: 17px;
+    border-bottom: 1px;
+    color: transparent;
+    border-style: solid;
+    border-bottom-color: #ccc;
+}

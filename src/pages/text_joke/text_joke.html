@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet" (ionChange)="segmentChanged($event)">
+      <ion-segment-button class="joke-segment" value="new">
+        <div class="top-item">
+          <img class="bg" src="{{pet == 'new' ? 'assets/images/ic_new_click.png':'assets/images/ic_new_normal.png'}}" alt="">
+          <span class="text">最新</span>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button class="joke-segment" value="hot">
+        <div class="top-item">
+          <img  class="bg" src="{{pet == 'hot' ? 'assets/images/ic_hot_click.png':'assets/images/ic_hot_normal.png'}}" alt="">
+          <span class="text">最热</span>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <img class="header-bg" src="assets/images/bg_common_top.png" alt="">
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+    </ion-refresher-content>
+    </ion-refresher>
+    <div [ngSwitch]="pet">
+        <div *ngSwitchCase="'new'">
+            <ion-list class="joke-list" no-lines>
+                <ion-item *ngFor="let item of newJokes" class="joke-item" text-wrap>
+                    <div class="joke-item-container">
+                        <div class="user">
+                        <img class="avatar" src="{{item.user.avatar}}">  
+                        <span class="nickname">{{item.user.nickname}}</span>  
+                        <span class="time">{{item.create_time}}</span>  
+                        </div>
+                        <p class="content">
+                            {{item.content}}
+                        </p>
+                        <div class="operate">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+                    </div>
+                    <img src="assets/images/bg_common_bottom.png" alt="">
+                </ion-item>
+            </ion-list>
+            <div class="loading" *ngIf="newJokes.length == 0">
+                <ion-spinner name="circles" duration="1000"></ion-spinner>
+                正在加载 ...
+            </div>
+        </div>
+        <div *ngSwitchCase="'hot'">
+            <ion-list>
+                <ion-item *ngFor="let item of hotJokes" class="joke-item">
+                </ion-item>
+            </ion-list>
+            <div class="loading" *ngIf="hotJokes.length == 0">
+                <ion-spinner name="circles" duration="1000"></ion-spinner>
+                正在加载 ...
+            </div>
+        </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="! loadFinished[pet]">
+        <ion-infinite-scroll-content
+            loadingSpinner="circles"
+            loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <div class="finished" *ngIf="loadFinished[pet]">
+        <span class="line left"></span>
+        <span class="txt">已加载完毕</span>
+        <span class="line right"></span>
+    </div>
+</ion-content>

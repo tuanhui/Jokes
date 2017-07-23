@@ -1,0 +1,22 @@
+<ion-header class="header">
+    <img class="header-bg" src="assets/images/bg_common_top.png" alt="">
+    <ion-navbar class="navbar">
+        <ion-title>
+           我的
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="tutorial-page">
+  <ion-slides pager>
+    <ion-slide>
+      <ion-list>
+          <ion-item *ngFor="let i of datas">{{i}}</ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+          <ion-item *ngFor="let i of datas">{{i}}</ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

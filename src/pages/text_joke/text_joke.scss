@@ -1,0 +1,47 @@
+.user {
+    height: 68px;
+    padding: 10px 0;
+}
+.user .avatar {
+    width: 48px;
+    margin-right: 10px;
+    height: 48px;
+    border-radius: 50%;
+    float: left;
+    border: 1px solid #000;
+}
+.user .nickname {
+    display: block;
+    width: 60%;
+    float: left;
+}
+.user .time {
+    display: block;
+    width: 60%;
+    float: left;
+}
+.joke-list {
+     padding: 10px;
+}
+.joke-item {
+    padding-left: 0;
+    background-color: transparent;
+   
+}
+.joke-item .joke-item-container {
+    background-color: white;
+    padding: 0 5px;
+}
+.joke-item-container .content {
+    background-color: white;
+}
+.joke-item img {
+    font-size: 0;
+    vertical-align: top;
+}
+.joke-item.item-block .item-inner{
+    padding-right: 0;
+}
+.joke-item ion-label {
+    margin: 0;
+}

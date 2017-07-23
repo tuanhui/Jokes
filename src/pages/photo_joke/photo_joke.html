@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button class="joke-segment" value="new">
+        <div class="top-item">
+          <img class="bg" src="{{pet == 'new' ? 'assets/images/ic_new_click.png':'assets/images/ic_new_normal.png'}}" alt="">
+          <span class="text">最新</span>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button class="joke-segment" value="hot">
+        <div class="top-item">
+          <img  class="bg" src="{{pet == 'hot' ? 'assets/images/ic_hot_click.png':'assets/images/ic_hot_normal.png'}}" alt="">
+          <span class="text">最热</span>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <img class="header-bg" src="assets/images/bg_common_top.png" alt="">
+</ion-header>
+<ion-content>
+    <h1>photo joke</h1>
+</ion-content>
